@@ -11,8 +11,8 @@ class TodayTaskEntranceView extends GetView<TodayTaskEntranceLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.jhkpc.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.ytcm.value
+              ? const CircularProgressIndicator(color: Colors.greenAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class TodayTaskEntranceView extends GetView<TodayTaskEntranceLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.cyrb();
+              controller.cajbfg();
             },
             icon: const Icon(
               Icons.restart_alt,

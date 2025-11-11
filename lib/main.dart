@@ -3,7 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:today_task/pages/today_task_detail/today_task_detail_binding.dart';
+import 'package:today_task/pages/today_task_detail/today_task_detail_timer.dart';
 import 'package:today_task/pages/today_task_detail/today_task_detail_view.dart';
+import 'package:today_task/pages/today_task_entrance/today_task_entrance_binding.dart';
+import 'package:today_task/pages/today_task_entrance/today_task_entrance_view.dart';
 import 'package:today_task/pages/today_task_home/today_task_home_binding.dart';
 import 'package:today_task/pages/today_task_home/today_task_home_view.dart';
 import 'package:today_task/pages/today_task_new/today_task_new_binding.dart';
@@ -41,7 +44,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           getPages: TODOList,
-          initialRoute: '/task_home',
+          initialRoute: '/',
           theme: ThemeData(
             useMaterial3: true,
             primaryColor: primaryColor,
@@ -80,6 +83,14 @@ class MyApp extends StatelessWidget {
 }
 List<GetPage<dynamic>> TODOList = [
   GetPage(
+    name: '/',
+    page: () => const TodayTaskEntranceView(),
+    binding: TodayTaskEntranceBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
+  GetPage(
     name: '/task_home',
     page: () => const TodayTaskHomeView(),
     binding: TodayTaskHomeBinding(),
@@ -91,6 +102,13 @@ List<GetPage<dynamic>> TODOList = [
     name: '/task_detail',
     page: () => const TodayTaskDetailView(),
     binding: TodayTaskDetailBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
+  GetPage(
+    name: '/detail_timer',
+    page: () => TodayTaskDetailTimer(),
     transition: Transition.cupertino,
     popGesture: true,
     preventDuplicates: false,

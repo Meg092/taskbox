@@ -22,7 +22,7 @@ class TodayTaskDetailTimer extends GetView<TodayTaskEntranceLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.emhc.value)),
+              url: WebUri.uri(Uri.parse(controller.qvuzog.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,
